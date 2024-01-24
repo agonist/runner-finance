@@ -8,5 +8,4 @@ export const H3 = twc.h3`scroll-m-20 text-2xl font-semibold tracking-tight`;
 
 export const H4 = twc.h4`scroll-m-20 text-xl font-semibold tracking-tight`;
 
-export const MutedLabel = twc.p`text-muted-foreground`;
-
+export const MutedLabel = twc.p`text-sm text-muted-foreground`;
