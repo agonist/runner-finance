@@ -1,6 +1,5 @@
-import { LabelValue } from "@/components/common/label-value";
 import { MarketMetrics } from "@/components/metrics/market-metrics";
-import { Separator } from "@/components/ui/separator";
+import ConnectWallet from "@/components/wallet/connect-wallet";
 
 export default function Home() {
   return (
