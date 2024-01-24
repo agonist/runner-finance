@@ -7,6 +7,7 @@ import { arbitrum, Chain, mainnet } from "wagmi/chains";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactNode } from "react";
+import { siweConfig } from "@/lib/api/siwe";
 
 const queryClient = new QueryClient();
 
@@ -16,11 +17,12 @@ const chains: [Chain, ...Chain[]] = [mainnet, arbitrum];
 
 const wagmiConfig = defaultWagmiConfig({
   chains: chains, // required
+
   projectId, // required
   metadata: {
     name: "Web3Modal",
     description: "Web3Modal Example",
-    url: "https://web3modal.com",
+    url: "http://localhost:3000/",
     icons: ["https://avatars.githubusercontent.com/u/37784886"],
     verifyUrl: "",
   }, // required
@@ -31,11 +33,11 @@ const wagmiConfig = defaultWagmiConfig({
   enableWalletConnect: true, // Optional - true by default
   enableInjected: true, // Optional - true by default
   enableEIP6963: true, // Optional - true by default
-  enableCoinbase: true, // Optional - true by default
+  enableCoinbase: false, // Optional - true by default
 });
 
 // 3. Create modal
-createWeb3Modal({ wagmiConfig, projectId, chains });
+createWeb3Modal({ siweConfig, wagmiConfig, projectId, chains });
 
 export function Web3Modal({
   children,
