@@ -10,13 +10,13 @@ type Props = {
 export const MarketMetrics: React.FC<Props> = ({ tvl, borrows, deposits }) => {
   return (
     <div className="grid grid-cols-3 gap-4 w-full">
-      <div className="bg-card p-4">
+      <div className="bg-card p-6">
         <LabelValue label="TVL" value={tvl} variant={"left"} />
       </div>
-      <div className="bg-card p-4">
+      <div className="bg-card p-6">
         <LabelValue label="Total Supplied" value={deposits} variant={"left"} />
       </div>
-      <div className="bg-card p-4">
+      <div className="bg-card p-6">
         <LabelValue label="Total Borrowed" value={borrows} variant={"left"} />
       </div>
     </div>

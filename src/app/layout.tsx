@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Chivo_Mono } from "next/font/google";
+import { Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Web3Modal } from "@/components/web3-modal";
 import { NavBar } from "@/components/nav-bar";
 
-const inter = Chivo_Mono({ subsets: ["latin"] });
+const inter = Roboto_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
