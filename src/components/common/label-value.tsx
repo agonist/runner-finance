@@ -4,7 +4,7 @@ import { DEFAULT_CURRENCY_SIGN, DEFAULT_DECIMAL } from "@/lib/const";
 import { VariantProps, cva } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
-const containerVariants = cva("flex flex-col", {
+const containerVariants = cva("flex flex-col space-y-2", {
   variants: {
     variant: {
       default: "items-center",

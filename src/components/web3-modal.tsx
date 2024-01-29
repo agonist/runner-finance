@@ -3,7 +3,7 @@
 import { createWeb3Modal, defaultWagmiConfig } from "@web3modal/wagmi/react";
 
 import { cookieStorage, createStorage, State, WagmiProvider } from "wagmi";
-import { arbitrum, Chain, mainnet } from "wagmi/chains";
+import { arbitrum, Chain, mainnet, manta } from "wagmi/chains";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactNode } from "react";
@@ -13,7 +13,7 @@ const queryClient = new QueryClient();
 
 const projectId = "a9207de79fd6005ea1469bcb5f5a44e4";
 
-const chains: [Chain, ...Chain[]] = [mainnet, arbitrum];
+const chains: [Chain, ...Chain[]] = [manta];
 
 const wagmiConfig = defaultWagmiConfig({
   chains: chains, // required
@@ -37,7 +37,14 @@ const wagmiConfig = defaultWagmiConfig({
 });
 
 // 3. Create modal
-createWeb3Modal({ siweConfig, wagmiConfig, projectId, chains });
+createWeb3Modal({
+  wagmiConfig,
+  projectId,
+  chains,
+  themeVariables: {
+    "--w3m-accent": "#021E29",
+  },
+});
 
 export function Web3Modal({
   children,
