@@ -5,10 +5,10 @@ import { columns } from "@/components/metrics/table/colums";
 import { PageRoot } from "@/components/page-root";
 import { PageSection } from "@/components/page-section";
 import { dummy } from "@/dummy";
-import { getMarketData } from "@/lib/api/market";
+import { getMarket, getMarketData } from "@/lib/api/market";
 
 export default async function Market() {
-  const market = await getMarketData();
+  const market = await getMarket();
 
   return (
     <PageRoot>
@@ -19,7 +19,7 @@ export default async function Market() {
 
       <PageSection className={"space-y-4"}>
         <H2 className="text-accent-foreground">Market</H2>
-        <MarketTable columns={columns} data={dummy.market} />
+        <MarketTable columns={columns} data={market} />
       </PageSection>
     </PageRoot>
   );

@@ -27,7 +27,7 @@ export const columns: ColumnDef<MarketItem>[] = [
       <div className="w-[80px] h-16 flex flex-col justify-center ">
         <p className="">{row.getValue("name")}</p>
         <p className="text-muted-foreground">
-          ${formatNumber(row.original.totalSupplyUsd, 2)}
+          ${formatNumber(row.original.currentPrice, 2, false)}
         </p>
       </div>
     ),

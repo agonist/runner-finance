@@ -1,4 +1,8 @@
-export const formatNumber = (num: number, decimalPlaces: number): string => {
+export const formatNumber = (num: number, decimalPlaces: number, shorten: boolean = true): string => {
+  if (!shorten) {
+      return num.toFixed(decimalPlaces);
+
+  }
   if (num >= 1_000_000_000) {
     return (num / 1_000_000_000).toFixed(decimalPlaces) + "B";
   }

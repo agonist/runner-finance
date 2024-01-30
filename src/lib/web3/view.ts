@@ -2,7 +2,7 @@ import { Cerc20Abi } from "@/abi/Cerc20";
 import { createPublicClient, getContract, http } from "viem";
 import { manta } from "viem/chains";
 
-const client = createPublicClient({
+export const client = createPublicClient({
   chain: manta,
   transport: http(),
 });
