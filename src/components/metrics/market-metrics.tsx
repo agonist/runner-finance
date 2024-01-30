@@ -1,23 +1,29 @@
+import { ProtocolStats } from "@/types/market";
 import { LabelValue } from "../common/label-value";
-import { Separator } from "../ui/separator";
 
 type Props = {
-  tvl: number;
-  deposits: number;
-  borrows: number;
+  stats: ProtocolStats;
 };
 
-export const MarketMetrics: React.FC<Props> = ({ tvl, borrows, deposits }) => {
+export const MarketMetrics: React.FC<Props> = ({ stats }) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full">
       <div className="bg-card p-6 border rounded-xl">
-        <LabelValue label="TVL" value={tvl} variant={"left"} />
+        <LabelValue label="TVL" value={stats.totalSize} variant={"left"} />
       </div>
       <div className="bg-card p-6 border rounded-xl">
-        <LabelValue label="Total Supplied" value={deposits} variant={"left"} />
+        <LabelValue
+          label="Total Supplied"
+          value={stats.totalSupplied}
+          variant={"left"}
+        />
       </div>
       <div className="bg-card p-6 border rounded-xl">
-        <LabelValue label="Total Borrowed" value={borrows} variant={"left"} />
+        <LabelValue
+          label="Total Borrowed"
+          value={stats.totalBorrowed}
+          variant={"left"}
+        />
       </div>
     </div>
   );

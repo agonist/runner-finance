@@ -60,7 +60,9 @@ export const columns: ColumnDef<MarketItem>[] = [
     accessorKey: "supplyAPY",
     header: ({ column }) => <p>Supply APY</p>,
     cell: ({ row }) => (
-      <div className="w-[80px]">{row.getValue("supplyAPY")}%</div>
+      <div className="w-[80px]">
+        <p className="">{formatNumber(row.getValue("supplyAPY"), 2)}%</p>
+      </div>
     ),
   },
   {
@@ -91,7 +93,9 @@ export const columns: ColumnDef<MarketItem>[] = [
     accessorKey: "borrowAPY",
     header: ({ column }) => <p>Borrow APY</p>,
     cell: ({ row }) => (
-      <div className="w-[80px]">{row.getValue("borrowAPY")}%</div>
+      <div className="w-[80px]">
+        <p className="">{formatNumber(row.getValue("borrowAPY"), 2)}%</p>
+      </div>
     ),
   },
 ];
